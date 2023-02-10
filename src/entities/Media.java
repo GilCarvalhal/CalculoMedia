@@ -12,33 +12,16 @@ public class Media {
 		return media;
 	}
 
-	public boolean aprovado() {
-		return media <= 10 && media >= 7;
-	}
-
-	public boolean recuperacao() {
-		return media <= 7 && media >= 4.5;
-	}
-
-	public boolean reprovado() {
-		return media <= 4.5 && media >= 0;
-	}
-
-//	public void excecao() throws RuntimeException {
-//		if (!aprovado() && !recuperacao() && !reprovado()) {
-//			throw new RuntimeException("Unexpected error");
-//		}
-//	}
-
-	public void operacao() {
-		if (aprovado()) {
-			return;
-		} else if (recuperacao()) {
-			return;
-		} else if (reprovado()) {
-			return;
+	public String operacao() {
+		if (media <= 10 && media >= 7) {
+			return "Aprovado";
+		} else if (media < 7 && media >= 4.5) {
+			return "Recuperação";
+		} else if (media < 4.5 && media >= 0) {
+			return "Reprovado";
+		} else {
+			throw new RuntimeException("Invalid command: Unexpected error");
 		}
-
 	}
 
 }

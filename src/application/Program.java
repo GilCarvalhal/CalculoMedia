@@ -16,19 +16,11 @@ public class Program {
 
 		Media m = new Media(media);
 
-	//	try {
-			if (m.aprovado()) {
-				System.out.println("Aprovado");
-			} else if (m.recuperacao()) {
-				System.out.println("Recuperação");
-			} else if (m.reprovado()) {
-				System.out.println("Reprovado");
-			} else {
-				System.out.println("Invalid command: Unexpected error");
-			}
-//		} catch (RuntimeException e) {
-//			System.out.print("Invalid command: " + e.getMessage());
-//		}
+		try {
+			System.out.println(m.operacao());
+		} catch (RuntimeException e) {
+			System.out.print(e.getMessage());
+		}
 
 		sc.close();
 	}
